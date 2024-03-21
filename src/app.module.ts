@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TiendasModule } from './tiendas/tiendas.module';
+import { ProductosModule } from './productos/productos.module';
+
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -12,6 +14,7 @@ import { TiendasModule } from './tiendas/tiendas.module';
     }),
     MongooseModule.forRoot(process.env.uri_mongo),
     TiendasModule,
+    ProductosModule, 
   ],
   controllers: [AppController],
   providers: [AppService],
